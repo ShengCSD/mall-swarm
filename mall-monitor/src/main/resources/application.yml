@@ -3,11 +3,15 @@ spring:
     name: mall-monitor
   security: # 配置登录用户名和密码
     user:
-      name: macro
-      password: 123456
+      name: admin
+      password: 1
   boot:  # 不显示admin-server的监控信息
     admin:
       discovery:
         ignored-services: ${spring.application.name}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://192.168.122.230:8848
 server:
   port: 8101
